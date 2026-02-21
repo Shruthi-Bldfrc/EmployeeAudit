@@ -12,7 +12,8 @@
 
 		public string ActionType { get; set; }
 
-		public string ActionUser { get; set; }
+		public string  ActionUser { get; set; }
+
 
 	}
 }

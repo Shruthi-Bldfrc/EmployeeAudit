@@ -25,7 +25,7 @@ namespace EmployeeAudit.RepositoryLayer.RepositoryImplementations
 					EmployeeName = emp.EmployeeName,
 					ActionDate = DateTime.Now,
 					ActionType = "GET",
-					//ActionUser = Environment.UserName
+					ActionUser = Environment.UserName
 				});
 			}
 
@@ -46,7 +46,8 @@ namespace EmployeeAudit.RepositoryLayer.RepositoryImplementations
 					EmployeeId = emp.EmployeeId,   // generated after SaveChanges
 					EmployeeName = emp.EmployeeName,
 					ActionDate = DateTime.Now,
-					ActionType = "GETBYID"
+					ActionType = "GETBYID",
+					ActionUser = Environment.UserName
 				});
 			}
 
@@ -65,7 +66,8 @@ namespace EmployeeAudit.RepositoryLayer.RepositoryImplementations
 				EmployeeId = employee.EmployeeId,   // generated after SaveChanges
 				EmployeeName = employee.EmployeeName,
 				ActionDate = DateTime.Now,
-				ActionType = "POST"
+				ActionType = "POST",
+				ActionUser = Environment.UserName
 			});
 
 			_appDbContext.SaveChanges();
@@ -86,7 +88,8 @@ namespace EmployeeAudit.RepositoryLayer.RepositoryImplementations
 					EmployeeId = existingEmployee.EmployeeId,
 					EmployeeName = existingEmployee.EmployeeName,
 					ActionDate = DateTime.Now,
-					ActionType = "PUT"
+					ActionType = "PUT",
+					ActionUser = Environment.UserName
 				});
 				_appDbContext.SaveChanges();
 			}
@@ -106,7 +109,8 @@ namespace EmployeeAudit.RepositoryLayer.RepositoryImplementations
 					EmployeeId = existingEmployee.EmployeeId,
 					EmployeeName = existingEmployee.EmployeeName,
 					ActionDate = DateTime.Now,
-					ActionType = "DELETE"
+					ActionType = "DELETE",
+					ActionUser = Environment.UserName
 				});
 
 				// ✅ Then delete employee
